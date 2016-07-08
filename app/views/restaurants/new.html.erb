@@ -1,0 +1,16 @@
+<!-- #<h1>New Restaurant</h1> -->
+<%= form_for :restaurant do |r| %>
+    <p>
+        <%= r.label :name %>
+        <%= r.text_field :name %>
+    </p>
+
+    <p>
+        <%= r.label :owner_id %>
+        <%= r.text_field :owner_id %>
+    </p>
+
+    <p>
+        <%= r.submit %>
+    </p>
+<% end %>
