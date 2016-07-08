@@ -37,16 +37,15 @@ ActiveRecord::Schema.define(version: 20160708161043) do
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer   "owner_id"
+    t.string   "address"
+    t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "string"
-    t.string "last_name"
-    t.string "email"
+    t.string "name"
+    t.integer "owner_id"
   end
 
 end
