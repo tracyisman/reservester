@@ -2,24 +2,24 @@
     <strong>Name:</strong>
     <%= @restaurant.name %>
 </p>
-
+</br>
 <p>
     <strong>Description:</strong>
     <%= @restaurant.description %>
 </p>
-
+</br>
 <p>
     <strong>Address:</strong>
     <%= @restaurant.address %>
 </p>
-
+</br>
 <p>
     <strong>Phone:</strong>
     <%= @restaurant.phone %>
 </p>
-
+</br>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
 <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %>
 
 
-<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD5nt-kaFLNPJ4eifWEBOKyplZFE35MZ6E%q=<%= @restaurant.address %>"></iframe>
+<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD5nt-kaFLNPJ4eifWEBOKyplZFE35MZ6E&q=<%= @restaurant.address %>"></iframe>
