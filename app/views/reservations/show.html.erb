@@ -1,0 +1,32 @@
+<p>
+    <strong>Name:</strong>
+    <%= @reservation.name %>
+</p>
+</br>
+<p>
+    <strong>Email:</strong>
+    <%= @reservation.email %>
+</p>
+</br>
+<p>
+    <strong>Restaurant:</strong>
+    <%= @restaurant.name %>
+</p>
+</br>
+<p>
+    <strong>Date:</strong>
+    <%= @reservation.reservation_date %>
+</p>
+</br>
+<p>
+    <strong>Time:</strong>
+    <%= @reservation.reservation_time %>
+</p>
+</br>
+<p>
+    <strong>Phone:</strong>
+    <%= @reservation.phone %>
+</p>
+</br>
+<%= link_to 'Edit', edit_reservation_path(@reservation) %>
+<%= link_to 'Delete', reservation_path(@reservation), method: :delete %>

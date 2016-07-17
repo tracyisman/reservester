@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
+  resources :reservations
+
   root 'restaurants#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

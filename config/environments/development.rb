@@ -1,3 +1,5 @@
+ENV['POSTMARK_API_TOKEN'] = '47bd2fd1-fd86-48b7-972e-ad4664bab9db'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

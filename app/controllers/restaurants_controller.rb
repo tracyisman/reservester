@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
 
 
     def new
-        @restaurant = current_owner.restaurant.build
+        @restaurant = current_owner.restaurants.build
     end
 
     def create
