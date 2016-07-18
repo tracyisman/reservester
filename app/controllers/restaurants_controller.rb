@@ -18,6 +18,8 @@ class RestaurantsController < ApplicationController
     end
 
     def show
+        #if current_owner.restaurants
+
         @restaurant = Restaurant.find(params[:id])
     end
 

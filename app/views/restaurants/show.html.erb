@@ -18,9 +18,23 @@
     <%= @restaurant.phone %>
 </p>
 </br>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
-<%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %>
-<%= link_to 'Make Reservation Here', new_reservation_path(restaurant_id: @restaurant.id) %>
+
+
+<% if current_owner == @restaurant.owner %>
+    <%= @restaurant.reservations.each do |res| %>
+        <p>Name: <%= res.name %></p>
+        <p>Email: <%= res.email %></p>
+        <p>Date: <%= res.reservation_date %></p>
+        <p>Time: <%= res.reservation_time %></p>
+        <p>Phone: <%= res.phone %></p>
+        </br>
+    <% end %>
+    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+    <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete %>
+<% else %>
+    <%= link_to 'Make Reservation Here', new_restaurant_reservation_path(restaurant_id: @restaurant.id) %>
+<% end %>
+
 
 
 <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD5nt-kaFLNPJ4eifWEBOKyplZFE35MZ6E&q=<%= @restaurant.address %>"></iframe>
