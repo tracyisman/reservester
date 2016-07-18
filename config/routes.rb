@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :restaurants do
       resources :reservations
   end
-  
+
   root 'restaurants#index'
+
+  get '/dashboard' => 'owners#dashboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
