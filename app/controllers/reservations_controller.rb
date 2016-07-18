@@ -7,11 +7,20 @@ class ReservationsController < ApplicationController
     end
 
     def create
-        @reservation = Reservation.new(reservation_params)
-        if @reservation.save
-            redirect_to restaurant_reservation_path(restaurant_id: @restaurant.id, id: @reservation.id)
-        else
-            render 'new'
+        @user = User.new(user_params)
+
+        respond_to do |f|
+            @reservation = Reservation.new(reservation_params)
+            if @reservation.save
+                redirect_to restaurant_reservation_path(restaurant_id: @restaurant.id, id: @reservation.id)
+                ExampleMailer.sample_email(@user).deliver
+
+                f.html { redirect_to @user, notice: 'User was successfully created.'}
+                f.json { render :show, status: :created, location: @user }
+            else
+                f.html { render :new }
+                f.json { render json: @user.errors, status: :unprocessable_entity }
+            end
         end
     end
 

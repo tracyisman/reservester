@@ -1,6 +1,8 @@
 class RestaurantMailer < ApplicationMailer
-    def reservation_created
-        @cool = "cool variable"
+    default from: "tracyisman@gmail.com"
+
+    def reservation_created(user)
+        @user = user
         mail(to: 'tracyisman@gmail.com', subject: 'Reservation Created')
     end
 end

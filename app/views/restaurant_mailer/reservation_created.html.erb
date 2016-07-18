@@ -1,2 +1,11 @@
-This is a cool email
-<b>THis is a bolded text <%= @cool %></b>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+
+    <body>
+        <h1>Hi <%= @user.name %></h1>
+        <p>Sample mail sent using smtp.</p>
+    </body>
+</html>
