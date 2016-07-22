@@ -31,16 +31,15 @@
     </p>
 
     <p>
-        <%= r.label :reservation_date %>
-        <%= r.text_field :reservation_date %>
+        <%= r.label :reservation_date %><br>
+        <%= r.date_select :reservation_date %>
     </p>
 
     <p>
-        <%= r.label :reservation_time %>
-        <%= r.text_field :reservation_time %>
+        <%= r.label :reservation_time %><br>
+        <%= r.time_select :reservation_time %>
     </p>
 
-    <p>
         <%= r.submit %>
     </p>
 <% end %>

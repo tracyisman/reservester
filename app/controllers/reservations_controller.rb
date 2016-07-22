@@ -12,8 +12,8 @@ class ReservationsController < ApplicationController
         #respond_to do |f|
             @reservation = Reservation.new(reservation_params)
             if @reservation.save
+                RestaurantMailer.reservation_created(@reservation).deliver
                 redirect_to restaurant_reservation_path(restaurant_id: @restaurant.id, id: @reservation.id)
-                #ExampleMailer.sample_email(@user).deliver
 
                 #f.html { redirect_to @user, notice: 'User was successfully created.'}
                 #f.json { render :show, status: :created, location: @user }
