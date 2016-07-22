@@ -1,7 +1,7 @@
-<% if current_owner.restaurants.empty? %>
+<% if current_user.restaurants.empty? %>
     <p>No restaurants to show!</p>
 <% else %>
-    <% current_owner.restaurants.reservations.each do |x| %>
+    <% current_user.restaurants.reservations.each do |x| %>
         <p>Name: <%= x.name %></p>
         <p>Email: <%= x.email %></p>
         <p>Date: <%= x.reservation_date %></p>

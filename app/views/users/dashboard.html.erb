@@ -1,11 +1,12 @@
-<% if current_owner.restaurants.empty? %>
+<% if current_user.restaurants.empty? %>
     <p>No restaurants to show</p>
 <% else %>
-    <% current_owner.restaurants.each do |x| %>
+    <% current_user.restaurants.each do |x| %>
         <p>Name: <%= x.name %></p>
         <p>Description: <%= x.description %></p>
         <p>Address: <%= x.address %></p>
         <p>phone: <%= x.phone %></p>
+        <%#= link_to 'See Reservations' reservation_show_path(restaurant) %>
         </br>
     <% end %>
 <% end %>
