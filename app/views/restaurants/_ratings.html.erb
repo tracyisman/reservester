@@ -1,0 +1,7 @@
+<div id="ratings">
+    <% if signed_in? && current_user.has_starred?(restaurant) %>
+        <%= link_to 'UNSTAR', restaurant_stars_path(restaurant), method: :delete, remote: true %>
+    <% else %>
+        <%= link_to 'STAR', restaurant_stars_path(restaurant), method: :post, remote: true %>
+    <% end %>
+</div>

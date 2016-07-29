@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :restaurants do
       resources :reservations
-      resources :star
+      resource :stars, only: [:create, :destroy]
   end
 
   root 'restaurants#index'

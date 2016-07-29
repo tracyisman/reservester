@@ -1,3 +1,6 @@
+<%= link_to 'Home', root_path %>
+
+
 <!-- #<h1>New Restaurant</h1> -->
 <%= form_for @restaurant do |r| %>
     <% if @restaurant.errors.any? %>
@@ -10,7 +13,7 @@
         </ul>
     </div>
     <% end %>
-    
+
     <p>
         <%= r.label :name %><br>
         <%= r.text_field :name %>
@@ -19,6 +22,15 @@
     <p>
         <%= r.label :description %>
         <%= r.text_field :description %>
+    </p>
+
+    <p>
+        <% Category.all.each do |category| %>
+            <label>
+                <%= check_box_tag "restaurant[category_ids][]", category.id, r.object.categories.include?(category) %>
+                <%= category.name %>
+            </label>
+        <% end %>
     </p>
 
     <p>

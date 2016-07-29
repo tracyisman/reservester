@@ -51,7 +51,7 @@ class RestaurantsController < ApplicationController
     def restaurant_params
         params.
           require(:restaurant).
-          permit(:name, :description, :address, :phone).
+          permit(:name, :description, :address, :phone, category_ids: []).
           merge(owner_id: current_user.id)
     end
 end

@@ -13,12 +13,15 @@ class User < ActiveRecord::Base
 
   has_many :restaurants, foreign_key: :owner_id
   has_many :stars
+  has_many :starred_restaurants, through: :stars, source: :restaurant
 
   def owner?
       role == "owner"
   end
 
-
+  def has_starred?(restaurant)
+      starred_restaurants.include?(restaurant)
+  end
 
 
 end

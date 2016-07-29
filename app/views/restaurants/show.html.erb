@@ -1,3 +1,5 @@
+<%= link_to 'Home', root_path %>
+
 <p>
     <strong>Name:</strong>
     <%= @restaurant.name %>
@@ -6,6 +8,11 @@
 <p>
     <strong>Description:</strong>
     <%= @restaurant.description %>
+</p>
+</br>
+<p>
+    <strong>Category:</strong>
+    <%= @restaurant.categories.to_a.map { |x| x.name }.join(", ") %>
 </p>
 </br>
 <p>
@@ -36,8 +43,6 @@
     <%= link_to 'Make Reservation Here', new_restaurant_reservation_path(restaurant_id: @restaurant.id) %>
 <% end %>
 
-<%= link_to 'STAR', new_restaurant_star_path(restaurant_id: @restaurant.id) %>
-
-
+<%= render "ratings", restaurant: @restaurant %>
 
 <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD5nt-kaFLNPJ4eifWEBOKyplZFE35MZ6E&q=<%= @restaurant.address %>"></iframe>
